@@ -1,11 +1,116 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter'
-import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook'
-import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram'
-import faGithub from '@fortawesome/fontawesome-free-brands/faGithub'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import ArtistCarousel from './ArtistCarousel';
 
-class Main extends React.Component {
+class Main extends Component {
+  constructor(props) {
+    super(props);
+    
+    // Données des 14 artistes
+    this.artists = [
+      {
+        name: "Miss Pepper",
+        genre: "Rock/Pop",
+        time: "20h30 - 21h15",
+        description: "Formation rock énergique avec des influences pop modernes. Miss Pepper apporte une énergie contagieuse sur scène avec des mélodies accrocheuses.",
+        image: "/static/images/MissPepper.jpg"
+      },
+      {
+        name: "Les Troubadours",
+        genre: "Folk/Acoustique",
+        time: "18h00 - 18h45",
+        description: "Trio acoustique proposant des reprises folk et des compositions originales dans une ambiance intimiste et chaleureuse.",
+        image: "/static/images/pic01.jpg"
+      },
+      {
+        name: "Electric Dreams",
+        genre: "Électro/Synthwave",
+        time: "22h00 - 22h45",
+        description: "Duo électronique explorant les sonorités synthwave et ambient, parfait pour clôturer la soirée en beauté.",
+        image: "/static/images/pic02.jpg"
+      },
+      {
+        name: "Acoustic Soul",
+        genre: "Soul/R&B",
+        time: "19h00 - 19h45",
+        description: "Voix puissante et guitares acoustiques pour un voyage musical dans l'univers de la soul et du R&B contemporain.",
+        image: "/static/images/pic03.jpg"
+      },
+      {
+        name: "The Vintage Band",
+        genre: "Rock Vintage",
+        time: "21h30 - 22h15",
+        description: "Groupe reprenant les grands classiques du rock des années 60-70 avec une énergie et une authenticité remarquables.",
+        image: "/static/images/pic01.jpg"
+      },
+      {
+        name: "Jazz Collective",
+        genre: "Jazz/Fusion",
+        time: "17h30 - 18h15",
+        description: "Formation jazz moderne explorant les frontières entre tradition et innovation dans un style fusion contemporain.",
+        image: "/static/images/pic02.jpg"
+      },
+      {
+        name: "Mountain Echo",
+        genre: "Country/Bluegrass",
+        time: "16h30 - 17h15",
+        description: "Authenticité country et sonorités bluegrass pour une évasion musicale vers les grands espaces américains.",
+        image: "/static/images/pic03.jpg"
+      },
+      {
+        name: "Urban Groove",
+        genre: "Hip-Hop/Rap",
+        time: "20h00 - 20h30",
+        description: "Rap français avec des textes engagés et des beats travaillés, représentant la nouvelle scène hip-hop locale.",
+        image: "/static/images/pic01.jpg"
+      },
+      {
+        name: "Celtic Winds",
+        genre: "Musique Celtique",
+        time: "15h30 - 16h15",
+        description: "Musique traditionnelle celtique avec cornemuses, violons et bodhrán pour un voyage en terres irlandaises.",
+        image: "/static/images/pic02.jpg"
+      },
+      {
+        name: "Reggae Sunshine",
+        genre: "Reggae/Ska",
+        time: "19h30 - 20h15",
+        description: "Vibrations reggae positives et rythmes ska entraînants pour une ambiance estivale et décontractée.",
+        image: "/static/images/pic03.jpg"
+      },
+      {
+        name: "Indie Collective",
+        genre: "Indie Rock",
+        time: "18h45 - 19h30",
+        description: "Son indie rock alternatif avec des mélodies mélancoliques et des arrangements soignés par de jeunes talents locaux.",
+        image: "/static/images/pic01.jpg"
+      },
+      {
+        name: "Chanson Française",
+        genre: "Chanson/Variété",
+        time: "16h00 - 16h45",
+        description: "Reprises et créations dans la pure tradition de la chanson française, portées par une voix authentique et émouvante.",
+        image: "/static/images/pic02.jpg"
+      },
+      {
+        name: "Metal Storm",
+        genre: "Metal/Hard Rock",
+        time: "21h00 - 21h45",
+        description: "Puissance metal et riffs hard rock pour les amateurs de musique intense et de performances scéniques spectaculaires.",
+        image: "/static/images/pic03.jpg"
+      },
+      {
+        name: "World Fusion",
+        genre: "Musiques du Monde",
+        time: "17h00 - 17h45",
+        description: "Mélange de sonorités du monde entier dans une fusion moderne alliant traditions et modernité musicale.",
+        image: "/static/images/pic01.jpg"
+      }
+    ];
+  }
+
   render() {
 
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
@@ -15,24 +120,35 @@ class Main extends React.Component {
 
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Intro</h2>
-          <span className="image main"><img src="/static/images/pic01.jpg" alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+          <span className="image main"><img src="/static/images/intro.jpg" alt="" /></span>
+          <p>Le Frahier’stival est un événement musical et convivial qui prend vie au cœur de Frahier, village où nature et partage se rencontrent. Né de la volonté de rassembler habitants, familles et passionnés de musique, il offre une ambiance champêtre et chaleureuse, où la culture s’invite en plein air.</p>  
+          <p>Concerts, animations et moments de rencontre rythment la journée, permettant à chacun de découvrir de nouveaux artistes, de vibrer ensemble et de profiter d’un cadre verdoyant. Plus qu’un simple rendez-vous musical, le Frahier’stival est une fête locale portée par des bénévoles et partenaires engagés, qui célèbrent la richesse du territoire et l’esprit de convivialité.</p>
           {close}
         </article>
 
-        <article id="work" className={`${this.props.article === 'work' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Work</h2>
+        <article id="lineup" className={`${this.props.article === 'lineup' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Line Up</h2>
+          <div className="lineup-intro">
+            <p>Découvrez les 14 artistes exceptionnels qui feront vibrer le Frahier'stival ! Une programmation éclectique qui traverse tous les genres musicaux, de 17h00 à 02h00.</p>
+          </div>
+          <ArtistCarousel artists={this.artists} />
+          {close}
+        </article>
+
+        <article id="billeterie" className={`${this.props.article === 'billeterie' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Billetterie</h2>
           <span className="image main"><img src="/static/images/pic02.jpg" alt="" /></span>
           <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
           <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
           {close}
         </article>
 
-        <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">About</h2>
-          <span className="image main"><img src="/static/images/pic03.jpg" alt="" /></span>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+        <article id="equipe" className={`${this.props.article === 'equipe' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">Equipe</h2>
+          <span className="image main"><img src="/static/images/equipe.jpg" alt="" /></span>
+          <p>Derrière chaque sourire, chaque installation et chaque note de musique, il y a une équipe formidable : nos 40 bénévoles.</p>
+          <p>Sans eux, le Frahier’stival n’existerait pas. Ils donnent de leur temps, de leur énergie et de leur bonne humeur pour que le festival se déroule dans les meilleures conditions. De la mise en place des scènes à l’accueil du public, de la restauration à la communication, chacun apporte sa pierre à l’édifice avec passion et engagement.</p>
+          <p>Leur enthousiasme est contagieux, leur motivation exemplaire : ce sont eux qui font du Frahier’stival un événement authentique, convivial et chaleureux.</p>
           {close}
         </article>
 
