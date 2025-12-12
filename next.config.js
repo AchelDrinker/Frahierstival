@@ -17,14 +17,20 @@ module.exports = {
       },
       {
         test: /\.s(a|c)ss$/,
-        use: ['babel-loader', 'raw-loader', 'postcss-loader',
-          { loader: 'sass-loader',
+        use: [
+          'babel-loader',
+          'raw-loader',
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
             options: {
-              outputStyle: 'compressed', // These options are from node-sass: https://github.com/sass/node-sass
-              includePaths: ['styles', 'node_modules']
-                .map((d) => path.join(__dirname, d))
-                .map((g) => glob.sync(g))
-                .reduce((a, c) => a.concat(c), [])
+              sassOptions: {
+                outputStyle: 'compressed',
+                includePaths: [
+                  path.join(__dirname, 'styles'),
+                  path.join(__dirname, 'node_modules')
+                ]
+              }
             }
           }
         ]
