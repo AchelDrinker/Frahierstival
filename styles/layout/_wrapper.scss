@@ -43,3 +43,29 @@
 			@include vendor('justify-content', 'flex-start');
 		}
 	}
+
+	.sound-control {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		z-index: 100;
+		cursor: pointer;
+		color: palette(fg);
+		font-size: 1rem;
+		background: rgba(0,0,0,0.5);
+		width: 2.5rem;
+		height: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: all 0.3s ease;
+		border: 1px solid rgba(255,255,255,0.2);
+		backdrop-filter: blur(5px);
+
+		&:hover {
+			background: rgba(255,255,255,0.2);
+			transform: scale(1.1);
+			border-color: palette(fg-bold);
+		}
+	}

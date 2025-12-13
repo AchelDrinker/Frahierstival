@@ -17,11 +17,11 @@ const Header = (props) => (
         </div>
         <nav>
             <ul>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); props.onOpenArticle('intro')}}>Intro</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); props.onOpenArticle('lineup')}}>Line Up</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); props.onOpenArticle('billeterie')}}>Billetterie</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); props.onOpenArticle('equipe')}}>Equipe</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); props.onOpenArticle('contact')}}>Contact</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('intro')}}>Intro</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('lineup')}}>Line Up</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('billeterie')}}>Billetterie</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('equipe')}}>Equipe</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('contact')}}>Contact</a></li>
             </ul>
         </nav>
     </header>
