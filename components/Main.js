@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
-import ArtistCarousel from './ArtistCarousel';
+import ArtistGrid from './ArtistGrid';
 
 class Main extends Component {
   constructor(props) {
@@ -131,7 +131,7 @@ class Main extends Component {
           <div className="lineup-intro">
             <p>Découvrez les 14 artistes exceptionnels qui feront vibrer le Frahier'stival ! Une programmation éclectique qui traverse tous les genres musicaux, de 17h00 à 02h00.</p>
           </div>
-          <ArtistCarousel artists={this.artists} />
+          <ArtistGrid artists={this.artists} />
           {close}
         </article>
 
