@@ -92,9 +92,13 @@
 					'opacity #{duration(article)} ease-in-out'
 				));
 				@include vendor('transition-delay', '0.25s');
-				padding: 3rem 2rem;
+				padding: 4rem 6rem;
 				max-height: 40rem;
 				overflow: hidden;
+
+				@include breakpoint(small) {
+					padding: 3rem 2rem;
+				}
 
 				> :last-child {
 					margin-bottom: 0;
@@ -246,14 +250,15 @@
 
 			.content {
 				.inner {
-					padding: 2.5rem 0;
+					padding: 2.5rem 1.5rem;
 				}
 			}
 
 			nav {
 				ul {
 					@include vendor('flex-direction', 'column');
-					min-width: 10rem;
+					min-width: 0;
+					width: 100%;
 					max-width: 100%;
 
 					li {
@@ -265,10 +270,11 @@
 						}
 
 						a {
-							height: 3rem;
-							line-height: 3rem;
+							height: 3.5rem;
+							line-height: 3.5rem;
 							min-width: 0;
 							width: 100%;
+							font-size: 0.9rem;
 						}
 					}
 				}

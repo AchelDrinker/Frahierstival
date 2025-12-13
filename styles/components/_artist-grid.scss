@@ -13,14 +13,51 @@
   }
 
   .day-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1.5rem;
     color: palette(highlight);
-    border-bottom: solid 2px palette(highlight);
-    padding-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: size(border-radius);
+    padding: 1rem 1.5rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: font(letter-spacing);
     text-shadow: 0 0 10px rgba(255, 159, 67, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 159, 67, 0.2);
+      border-color: palette(highlight);
+      box-shadow: 0 0 20px rgba(255, 159, 67, 0.4);
+      transform: translateY(-2px);
+      
+      .day-title-text {
+        color: #ffffff;
+        text-shadow: 0 0 5px rgba(255, 159, 67, 0.8);
+      }
+    }
+
+    .toggle-icon {
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+      color: palette(fg-light);
+    }
+  }
+
+  &.expanded {
+    .day-title {
+      background: rgba(255, 159, 67, 0.1);
+      border-color: palette(highlight);
+      
+      .toggle-icon {
+        transform: rotate(90deg);
+        color: palette(highlight);
+      }
+    }
   }
 }
 

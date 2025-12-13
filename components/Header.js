@@ -11,8 +11,8 @@ const Header = (props) => (
         <div className="content">
             <div className="inner">
                 <h1>FRAHIER'STIVAL</h1>
-                <p>L'énergie d'un festival, l'âme d'un village.<br />
-                <strong>Vendredi 14 & Samedi 15 Août 2026</strong></p>
+                <p>L'énergie d'un festival, l'âme d'un village.</p>
+                <p>Vendredi 14 & Samedi 15 Août 2026</p>
             </div>
         </div>
         <nav>

@@ -35,15 +35,14 @@ const ArtistGrid = ({ artists }) => {
   return (
     <div className="artist-grid-container">
       {days.map(day => (
-        <div key={day} className="day-section">
+        <div key={day} className={`day-section ${expandedDays[day] ? 'expanded' : ''}`}>
           <h3 
             className="day-title" 
             onClick={() => toggleDay(day)}
-            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
           >
-            {day}
-            <span style={{ fontSize: '0.8em' }}>
-              <FontAwesomeIcon icon={expandedDays[day] ? faChevronDown : faChevronRight} />
+            <span>{day}</span>
+            <span className="toggle-icon">
+              <FontAwesomeIcon icon={faChevronRight} />
             </span>
           </h3>
           {expandedDays[day] && (
