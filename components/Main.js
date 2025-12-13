@@ -135,6 +135,7 @@ class Main extends Component {
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Intro</h2>
           <span className="image main"><img src="/static/images/intro.jpg" alt="" /></span>
+          <h3 className="major" style={{textAlign: 'center', color: '#ff9f43'}}>Vendredi 14 & Samedi 15 Août 2026</h3>
           <p>Le Frahier’stival est un événement musical et convivial qui prend vie au cœur de Frahier, village où nature et partage se rencontrent. Né de la volonté de rassembler habitants, familles et passionnés de musique, il offre une ambiance champêtre et chaleureuse, où la culture s’invite en plein air.</p>  
           <p>Concerts, animations et moments de rencontre rythment la journée, permettant à chacun de découvrir de nouveaux artistes, de vibrer ensemble et de profiter d’un cadre verdoyant. Plus qu’un simple rendez-vous musical, le Frahier’stival est une fête locale portée par des bénévoles et partenaires engagés, qui célèbrent la richesse du territoire et l’esprit de convivialité.</p>
           {close}
@@ -143,7 +144,7 @@ class Main extends Component {
         <article id="lineup" className={`${this.props.article === 'lineup' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Line Up</h2>
           <div className="lineup-intro">
-            <p>Découvrez les 14 artistes exceptionnels qui feront vibrer le Frahier'stival ! Une programmation éclectique qui traverse tous les genres musicaux, de 17h00 à 02h00.</p>
+            <p>Découvrez les 14 artistes exceptionnels qui feront vibrer le Frahier'stival les <strong>Vendredi 14 et Samedi 15 Août 2026</strong> ! Une programmation éclectique qui traverse tous les genres musicaux, de 17h00 à 02h00.</p>
           </div>
           <ArtistGrid artists={this.artists} />
           {close}
@@ -151,9 +152,13 @@ class Main extends Component {
 
         <article id="billeterie" className={`${this.props.article === 'billeterie' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Billetterie</h2>
-          <span className="image main"><img src="/static/images/pic02.jpg" alt="" /></span>
-          <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-          <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+          <span className="image main"><img src="/static/images/MissPepper.jpg" alt="" /></span>
+          <p>Préparez-vous à vivre une expérience inoubliable au Frahier'stival 2026 ! Rejoignez-nous les <strong>Vendredi 14 et Samedi 15 Août</strong> pour deux jours de musique, de partage et de convivialité au cœur de notre village.</p>
+          <p>En réservant vos places dès maintenant, vous garantissez votre accès à l'événement de l'année. Le Frahier'stival est une association à but non lucratif : chaque billet acheté et chaque don effectué contribue directement à la réussite du festival et nous permet de vous offrir une programmation toujours plus ambitieuse.</p>
+          <p>Soutenez la culture locale et faites partie de l'aventure !</p>
+          <ul className="actions">
+            <li><a href="https://www.helloasso.com/associations/frahierstival/evenements/frahier-stival-2026" target="_blank" rel="noopener noreferrer" className="button special icon fa-ticket">Réserver mes places / Faire un don</a></li>
+          </ul>
           {close}
         </article>
 
@@ -187,17 +192,11 @@ class Main extends Component {
             </ul>
           </form>
           <ul className="icons">
-            <li><a href="#">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a></li>
-            <li><a href="#">
+            <li><a href="https://www.facebook.com/p/Frahierstival-61573934457910/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} />
             </a></li>
-            <li><a href="#">
+            <li><a href="https://www.instagram.com/frahierstival_2026/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
-            </a></li>
-            <li><a href="#">
-              <FontAwesomeIcon icon={faGithub} />
             </a></li>
           </ul>
           {close}

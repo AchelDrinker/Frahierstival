@@ -42,6 +42,23 @@
 			border-radius: size(border-radius);
 			opacity: 0;
 
+			p {
+				text-align: justify;
+			}
+
+			h2, h3 {
+				text-align: center;
+			}
+
+			ul.actions {
+				text-align: center;
+				margin-bottom: 0;
+			}
+
+			ul.icons {
+				text-align: center;
+			}
+
 			&.timeout {
 				display: none;
 			}
@@ -53,6 +70,12 @@
 
 			&.active {
 				display: block !important;
+			}
+
+			/* Specific width for Line Up to accommodate the grid */
+			&#lineup {
+				width: 65rem;
+				max-width: 100%;
 			}
 
 			.close {
