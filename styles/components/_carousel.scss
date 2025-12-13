@@ -1,3 +1,8 @@
+@use '../libs/vars' as *;
+@use '../libs/functions' as *;
+@use '../libs/mixins' as *;
+@use '../libs/skel' as *;
+
 /* Artist Carousel */
 
 .artist-carousel {

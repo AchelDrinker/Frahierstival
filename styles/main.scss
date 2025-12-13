@@ -1,7 +1,8 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
+@use 'sass:meta';
+@use 'libs/vars' as *;
+@use 'libs/functions' as *;
+@use 'libs/mixins' as *;
+@use 'libs/skel' as *;
 
 /*
 	Dimension by HTML5 UP
@@ -9,40 +10,33 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-	@include skel-breakpoints((
-		xlarge:		'(max-width: 1680px)',
-		large:		'(max-width: 1280px)',
-		medium:		'(max-width: 980px)',
-		small:		'(max-width: 736px)',
-		xsmall:		'(max-width: 480px)',
-		xxsmall:	'(max-width: 360px)'
-	));
+// Breakpoints are now defined in libs/_vars.scss
 
-	@include skel-layout((
-		reset: 'full',
-		boxModel: 'border'
-	));
+@include skel-layout((
+	reset: 'full',
+	boxModel: 'border'
+));
 
 // Base.
 
-	@import 'base/page';
-	@import 'base/typography';
+@include meta.load-css('base/page');
+@include meta.load-css('base/typography');
 
 // Component.
 
-	@import 'components/form';
-	@import 'components/box';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/table';
-	@import 'components/button';
-	@import 'components/carousel';
+@include meta.load-css('components/form');
+@include meta.load-css('components/box');
+@include meta.load-css('components/icon');
+@include meta.load-css('components/image');
+@include meta.load-css('components/list');
+@include meta.load-css('components/table');
+@include meta.load-css('components/button');
+@include meta.load-css('components/carousel');
 
 // Layout.
 
-	@import 'layout/bg';
-	@import 'layout/wrapper';
-	@import 'layout/header';
-	@import 'layout/main';
-	@import 'layout/footer';
+@include meta.load-css('layout/bg');
+@include meta.load-css('layout/wrapper');
+@include meta.load-css('layout/header');
+@include meta.load-css('layout/main');
+@include meta.load-css('layout/footer');
