@@ -33,6 +33,7 @@ class IndexPage extends Component {
 
         const video = this.videoRef.current;
         if (video) {
+            video.volume = 0.3;
             video.muted = false;
             video.play().catch(error => {
                 // Autoplay with sound failed, fallback to muted
@@ -137,7 +138,7 @@ class IndexPage extends Component {
                     </div>
 
                     <div id="bg">
-                        <video ref={this.videoRef} loop playsInline>
+                        <video ref={this.videoRef} autoPlay loop playsInline>
                             <source src="/static/video/FRAHIERSTIVAL.mp4" type="video/mp4" />
                         </video>
                     </div>
