@@ -5,10 +5,9 @@ import { faGem } from '@fortawesome/free-regular-svg-icons'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
-        <div className="logo">
-            {/* <span className="icon fa-diamond"></span> */}
+        {/* <div className="logo">
             <img src="/static/images/Frahierstival_logo.png" alt="Frahierstival Logo" style={{ height: '80%', marginTop: '0.7rem' }} />
-        </div>
+        </div> */}
         <div className="content">
             <div className="inner">
                 <h1>FRAHIER'STIVAL</h1>

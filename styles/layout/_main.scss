@@ -37,7 +37,8 @@
 			backdrop-filter: blur(20px);
 			-webkit-backdrop-filter: blur(20px);
 			border: 1px solid rgba(255, 255, 255, 0.1);
-			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+			border-top: 2px solid palette(highlight);
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 159, 67, 0.1);
 			border-radius: size(border-radius);
 			opacity: 0;
 
@@ -84,13 +85,14 @@
 
 				&:hover {
 					&:before {
-						background-color: palette(border-bg);
+						background-color: rgba(255, 159, 67, 0.2);
+						box-shadow: 0 0 10px rgba(255, 159, 67, 0.3);
 					}
 				}
 
 				&:active {
 					&:before {
-						background-color: palette(border-bg-alt);
+						background-color: rgba(255, 159, 67, 0.4);
 					}
 				}
 			}
