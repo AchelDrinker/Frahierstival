@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Head from "next/head"
-import stylesheet from 'styles/main.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
 
 import Header from "../components/Header"
 import Main from "../components/Main"
@@ -14,21 +15,54 @@ class IndexPage extends Component {
             timeout: false,
             articleTimeout: false,
             article: "",
-            loading: "is-loading"
+            loading: "is-loading",
+            isMuted: false
         }
         this.handleOpenArticle = this.handleOpenArticle.bind(this)
         this.handleCloseArticle = this.handleCloseArticle.bind(this)
+        this.handleKeyDown = this.handleKeyDown.bind(this)
+        this.toggleMute = this.toggleMute.bind(this)
+        this.videoRef = React.createRef()
     }
 
     componentDidMount() {
         this.timeoutId = setTimeout(() => {
             this.setState({ loading: "" })
         }, 100)
+        document.addEventListener('keydown', this.handleKeyDown)
+
+        const video = this.videoRef.current;
+        if (video) {
+            video.volume = 0.3;
+            video.muted = false;
+            video.play().catch(error => {
+                // Autoplay with sound failed, fallback to muted
+                console.log("Autoplay with sound blocked, falling back to muted");
+                video.muted = true;
+                video.play();
+                this.setState({ isMuted: true });
+            });
+        }
     }
 
     componentWillUnmount() {
         if (this.timeoutId) {
             clearTimeout(this.timeoutId)
+        }
+        document.removeEventListener('keydown', this.handleKeyDown)
+    }
+
+    handleKeyDown(event) {
+        if (event.key === 'Escape' && this.state.isArticleVisible) {
+            this.handleCloseArticle()
+        }
+    }
+
+    toggleMute() {
+        const video = this.videoRef.current;
+        if (video) {
+            video.muted = !video.muted;
+            this.setState({ isMuted: video.muted });
         }
     }
 
@@ -37,6 +71,12 @@ class IndexPage extends Component {
             isArticleVisible: !this.state.isArticleVisible,
             article
         })
+        
+        if (!this.state.isArticleVisible) {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }, 350)
+        }
 
         setTimeout(() => {
             this.setState({
@@ -71,14 +111,15 @@ class IndexPage extends Component {
     }
     render() {
         return (
-            <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`}>
+            <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? "is-article-visible" : ""}`} onClick={(e) => {
+                if (this.state.isArticleVisible && !e.target.closest('article')) {
+                    this.handleCloseArticle();
+                }
+            }}>
                 <div>
                     <Head>
                         <title>Frahier'stival</title>
-                        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i" rel="stylesheet" />
                     </Head>
-
-                    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
 
                     <div id="wrapper">
                         <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
@@ -92,7 +133,15 @@ class IndexPage extends Component {
                         <Footer timeout={this.state.timeout} />
                     </div>
 
-                    <div id="bg" />
+                    <div className="sound-control" onClick={(e) => { e.stopPropagation(); this.toggleMute(); }}>
+                        <FontAwesomeIcon icon={this.state.isMuted ? faVolumeMute : faVolumeUp} />
+                    </div>
+
+                    <div id="bg">
+                        <video ref={this.videoRef} autoPlay loop playsInline>
+                            <source src="/static/video/FRAHIERSTIVAL.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
             </div>
         )

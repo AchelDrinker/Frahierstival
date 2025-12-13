@@ -1,3 +1,8 @@
+@use '../libs/vars' as *;
+@use '../libs/functions' as *;
+@use '../libs/mixins' as *;
+@use '../libs/skel' as *;
+
 ///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
@@ -16,7 +21,7 @@
 		height: 100vh;
 		z-index: 1;
 
-		&:before, &:after {
+		&:before {
 			content: '';
 			display: block;
 			position: absolute;
@@ -27,9 +32,9 @@
 		}
 
 		&:before {
-			@include vendor('transition', 'background-color #{_duration(bg)} ease-in-out');
-			@include vendor('transition-delay', '#{_duration(intro)}');
-			background-image:		linear-gradient(to top, #{_palette(bg-overlay)}, #{_palette(bg-overlay)}),
+			@include vendor('transition', 'background-color #{duration(bg)} ease-in-out');
+			@include vendor('transition-delay', '#{duration(intro)}');
+			background-image:		linear-gradient(to top, #{palette(bg-overlay)}, #{palette(bg-overlay)}),
 									url('/static/images/overlay.png');
 			background-size:		auto,
 									256px 256px;
@@ -40,21 +45,23 @@
 			z-index: 2;
 		}
 
-		&:after {
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 1;
 			@include vendor('transform', 'scale(1.125)');
 			@include vendor('transition', (
-				'transform #{_duration(article)} ease-in-out',
-				'filter #{_duration(article)} ease-in-out'
+				'transform #{duration(article)} ease-in-out',
+				'filter #{duration(article)} ease-in-out'
 			));
-			background-image:		url('/static/images/MissPepper.jpg');
-			background-position:	center;
-			background-size:		cover;
-			background-repeat:		no-repeat;
-			z-index: 1;
 		}
 
 		.body.is-article-visible & {
-			&:after {
+			video {
 				@include vendor('transform', 'scale(1.0825)');
 				@include vendor('filter', 'blur(0.2rem)');
 			}
@@ -62,7 +69,7 @@
 
 		.body.is-loading & {
 			&:before {
-				background-color:	_palette(bg-alt);
+				background-color:	palette(bg-alt);
 			}
 		}
 	}

@@ -1,3 +1,8 @@
+@use '../libs/vars' as *;
+@use '../libs/functions' as *;
+@use '../libs/mixins' as *;
+@use '../libs/skel' as *;
+
 ///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
@@ -7,7 +12,7 @@
 /* Image */
 
 	.image {
-		border-radius: _size(border-radius);
+		border-radius: size(border-radius);
 		border: 0;
 		display: inline-block;
 		position: relative;
@@ -15,8 +20,8 @@
 		&:before {
 			@include vendor('pointer-events', 'none');
 			background-image: url('/static/images/overlay.png');
-			background-color: _palette(bg-overlay);
-			border-radius: _size(border-radius);
+			background-color: palette(bg-overlay);
+			border-radius: size(border-radius);
 			content: '';
 			display: block;
 			height: 100%;
@@ -28,7 +33,7 @@
 		}
 
 		img {
-			border-radius: _size(border-radius);
+			border-radius: size(border-radius);
 			display: block;
 		}
 
@@ -55,7 +60,7 @@
 
 		&.fit {
 			display: block;
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0 0 size(element-margin) 0;
 			width: 100%;
 
 			img {
@@ -65,7 +70,7 @@
 
 		&.main {
 			display: block;
-			margin: (_size(element-margin) * 1.25) 0;
+			margin: (size(element-margin) * 1.25) 0;
 			width: 100%;
 
 			img {
@@ -75,13 +80,13 @@
 
 		@include breakpoint(small) {
 			&.main {
-				margin: (_size(element-margin) * 1) 0;
+				margin: (size(element-margin) * 1) 0;
 			}
 		}
 
 		@include breakpoint(xsmall) {
 			&.main {
-				margin: (_size(element-margin) * 0.75) 0;
+				margin: (size(element-margin) * 0.75) 0;
 			}
 		}
 	}

@@ -1,3 +1,8 @@
+@use '../libs/vars' as *;
+@use '../libs/functions' as *;
+@use '../libs/mixins' as *;
+@use '../libs/skel' as *;
+
 ///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
@@ -21,16 +26,38 @@
 		article {
 			@include vendor('transform', 'translateY(0.25rem)');
 			@include vendor('transition', (
-				'opacity #{_duration(article)} ease-in-out',
-				'transform #{_duration(article)} ease-in-out'
+				'opacity #{duration(article)} ease-in-out',
+				'transform #{duration(article)} ease-in-out'
 			));
 			@include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: transparentize(_palette(bg), 0.15);
-			border-radius: _size(border-radius);
+			background-color: rgba(20, 20, 20, 0.65);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-top: 2px solid palette(highlight);
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 159, 67, 0.1);
+			border-radius: size(border-radius);
 			opacity: 0;
+
+			p {
+				text-align: justify;
+			}
+
+			h2, h3 {
+				text-align: center;
+			}
+
+			ul.actions {
+				text-align: center;
+				margin-bottom: 0;
+			}
+
+			ul.icons {
+				text-align: center;
+			}
 
 			&.timeout {
 				display: none;
@@ -43,6 +70,12 @@
 
 			&.active {
 				display: block !important;
+			}
+
+			/* Specific width for Line Up to accommodate the grid */
+			&#lineup {
+				width: 65rem;
+				max-width: 100%;
 			}
 
 			.close {
@@ -58,7 +91,7 @@
 				white-space: nowrap;
 
 				&:before {
-					@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+					@include vendor('transition', 'background-color #{duration(transition)} ease-in-out');
 					content: '';
 					display: block;
 					position: absolute;
@@ -68,20 +101,21 @@
 					height: 2.5rem;
 					border-radius: 100%;
 					background-position: center;
-					background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{_palette(border)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
+					background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 20 20" zoomAndPan="disable"><style>line { stroke: #{palette(border)}; stroke-width: 1; }</style><line x1="2" y1="2" x2="18" y2="18" /><line x1="18" y1="2" x2="2" y2="18" /></svg>');
 					background-size: 20px 20px;
 					background-repeat: no-repeat;
 				}
 
 				&:hover {
 					&:before {
-						background-color: _palette(border-bg);
+						background-color: rgba(255, 159, 67, 0.2);
+						box-shadow: 0 0 10px rgba(255, 159, 67, 0.3);
 					}
 				}
 
 				&:active {
 					&:before {
-						background-color: _palette(border-bg-alt);
+						background-color: rgba(255, 159, 67, 0.4);
 					}
 				}
 			}
