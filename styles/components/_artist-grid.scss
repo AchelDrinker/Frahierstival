@@ -5,6 +5,24 @@
 
 /* Artist Grid */
 
+.day-section {
+  margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .day-title {
+    font-size: 1.5rem;
+    color: palette(fg-bold);
+    border-bottom: solid 2px palette(border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: font(letter-spacing);
+  }
+}
+
 .artist-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

@@ -14,6 +14,7 @@ class Main extends Component {
         name: "Miss Pepper",
         genre: "Rock/Pop",
         time: "20h30 - 21h15",
+        day: "Vendredi",
         description: "Formation rock énergique avec des influences pop modernes. Miss Pepper apporte une énergie contagieuse sur scène avec des mélodies accrocheuses.",
         image: "/static/images/MissPepper.jpg"
       },
@@ -21,6 +22,7 @@ class Main extends Component {
         name: "Les Troubadours",
         genre: "Folk/Acoustique",
         time: "18h00 - 18h45",
+        day: "Vendredi",
         description: "Trio acoustique proposant des reprises folk et des compositions originales dans une ambiance intimiste et chaleureuse.",
         image: "/static/images/pic01.jpg"
       },
@@ -28,6 +30,7 @@ class Main extends Component {
         name: "Electric Dreams",
         genre: "Électro/Synthwave",
         time: "22h00 - 22h45",
+        day: "Vendredi",
         description: "Duo électronique explorant les sonorités synthwave et ambient, parfait pour clôturer la soirée en beauté.",
         image: "/static/images/pic02.jpg"
       },
@@ -35,6 +38,7 @@ class Main extends Component {
         name: "Acoustic Soul",
         genre: "Soul/R&B",
         time: "19h00 - 19h45",
+        day: "Vendredi",
         description: "Voix puissante et guitares acoustiques pour un voyage musical dans l'univers de la soul et du R&B contemporain.",
         image: "/static/images/pic03.jpg"
       },
@@ -42,6 +46,7 @@ class Main extends Component {
         name: "The Vintage Band",
         genre: "Rock Vintage",
         time: "21h30 - 22h15",
+        day: "Vendredi",
         description: "Groupe reprenant les grands classiques du rock des années 60-70 avec une énergie et une authenticité remarquables.",
         image: "/static/images/pic01.jpg"
       },
@@ -49,6 +54,7 @@ class Main extends Component {
         name: "Jazz Collective",
         genre: "Jazz/Fusion",
         time: "17h30 - 18h15",
+        day: "Vendredi",
         description: "Formation jazz moderne explorant les frontières entre tradition et innovation dans un style fusion contemporain.",
         image: "/static/images/pic02.jpg"
       },
@@ -56,6 +62,7 @@ class Main extends Component {
         name: "Mountain Echo",
         genre: "Country/Bluegrass",
         time: "16h30 - 17h15",
+        day: "Vendredi",
         description: "Authenticité country et sonorités bluegrass pour une évasion musicale vers les grands espaces américains.",
         image: "/static/images/pic03.jpg"
       },
@@ -63,6 +70,7 @@ class Main extends Component {
         name: "Urban Groove",
         genre: "Hip-Hop/Rap",
         time: "20h00 - 20h30",
+        day: "Samedi",
         description: "Rap français avec des textes engagés et des beats travaillés, représentant la nouvelle scène hip-hop locale.",
         image: "/static/images/pic01.jpg"
       },
@@ -70,6 +78,7 @@ class Main extends Component {
         name: "Celtic Winds",
         genre: "Musique Celtique",
         time: "15h30 - 16h15",
+        day: "Samedi",
         description: "Musique traditionnelle celtique avec cornemuses, violons et bodhrán pour un voyage en terres irlandaises.",
         image: "/static/images/pic02.jpg"
       },
@@ -77,6 +86,7 @@ class Main extends Component {
         name: "Reggae Sunshine",
         genre: "Reggae/Ska",
         time: "19h30 - 20h15",
+        day: "Samedi",
         description: "Vibrations reggae positives et rythmes ska entraînants pour une ambiance estivale et décontractée.",
         image: "/static/images/pic03.jpg"
       },
@@ -84,6 +94,7 @@ class Main extends Component {
         name: "Indie Collective",
         genre: "Indie Rock",
         time: "18h45 - 19h30",
+        day: "Samedi",
         description: "Son indie rock alternatif avec des mélodies mélancoliques et des arrangements soignés par de jeunes talents locaux.",
         image: "/static/images/pic01.jpg"
       },
@@ -91,6 +102,7 @@ class Main extends Component {
         name: "Chanson Française",
         genre: "Chanson/Variété",
         time: "16h00 - 16h45",
+        day: "Samedi",
         description: "Reprises et créations dans la pure tradition de la chanson française, portées par une voix authentique et émouvante.",
         image: "/static/images/pic02.jpg"
       },
@@ -98,6 +110,7 @@ class Main extends Component {
         name: "Metal Storm",
         genre: "Metal/Hard Rock",
         time: "21h00 - 21h45",
+        day: "Samedi",
         description: "Puissance metal et riffs hard rock pour les amateurs de musique intense et de performances scéniques spectaculaires.",
         image: "/static/images/pic03.jpg"
       },
@@ -105,6 +118,7 @@ class Main extends Component {
         name: "World Fusion",
         genre: "Musiques du Monde",
         time: "17h00 - 17h45",
+        day: "Samedi",
         description: "Mélange de sonorités du monde entier dans une fusion moderne alliant traditions et modernité musicale.",
         image: "/static/images/pic01.jpg"
       }

@@ -88,7 +88,11 @@ class IndexPage extends Component {
                         <Footer timeout={this.state.timeout} />
                     </div>
 
-                    <div id="bg" />
+                    <div id="bg">
+                        <video autoPlay loop playsInline>
+                            <source src="/static/video/FRAHIERSTIVAL.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
             </div>
         )
