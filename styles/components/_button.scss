@@ -36,13 +36,18 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		transition: all 0.3s ease;
 
 		&:hover {
-			background-color: palette(border-bg);
+			background-color: rgba(255, 255, 255, 0.15);
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 0 size(border-width) palette(border);
+			transform: translateY(-2px);
+			text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 		}
 
 		&:active {
 			background-color: palette(border-bg-alt);
+			transform: translateY(0);
 		}
 
 		&.icon {

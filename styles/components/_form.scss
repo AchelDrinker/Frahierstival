@@ -90,9 +90,9 @@
 			'box-shadow #{duration(transition)} ease-in-out',
 			'background-color #{duration(transition)} ease-in-out'
 		));
-		background: transparent;
+		background: rgba(255, 255, 255, 0.05);
 		border-radius: size(border-radius);
-		border: solid size(border-width) palette(border);
+		border: solid size(border-width) rgba(255, 255, 255, 0.3);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -105,9 +105,9 @@
 		}
 
 		&:focus {
-			background: palette(border-bg);
+			background: rgba(255, 255, 255, 0.15);
 			border-color: palette(fg-bold);
-			box-shadow: 0 0 0 size(border-width) palette(fg-bold);
+			box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 		}
 	}
 
