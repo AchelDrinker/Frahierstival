@@ -53,7 +53,11 @@
 		}
 
 		@include breakpoint(xsmall) {
+			margin: 0 0 (size(element-margin) * 0.5) 0;
+
 			.field {
+				margin: 0 0 (size(element-margin) * 0.5) 0;
+
 				&.half {
 					width: 100%;
 					float: none;
@@ -63,6 +67,10 @@
 						padding: 0;
 					}
 				}
+			}
+			
+			> .actions {
+				margin: (size(element-margin) * 0.5) 0 0 0 !important;
 			}
 		}
 	}
@@ -76,6 +84,11 @@
 		line-height: 1.5;
 		margin: 0 0 (size(element-margin) * 0.5) 0;
 		text-transform: uppercase;
+
+		@include breakpoint(small) {
+			margin: 0 0 (size(element-margin) * 0.25) 0;
+			font-size: 0.7rem;
+		}
 	}
 
 	input[type="text"],

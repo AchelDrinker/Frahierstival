@@ -1,0 +1,65 @@
+@use 'sass:color';
+@use '../libs/vars' as *;
+@use '../libs/mixins' as *;
+
+.contact-slider-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.contact-slider-track {
+  display: flex;
+  width: 200%;
+  transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  &.show-general {
+    transform: translateX(0);
+  }
+  
+  &.show-artist {
+    transform: translateX(-50%);
+  }
+}
+
+.contact-slide {
+  width: 50%;
+  padding: 0 5px; // Small padding to avoid cutting off shadows/borders
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; // Prevent interaction when hidden
+  
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.switch-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  
+  &.center {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.switch-link {
+  color: palette(highlight);
+  border-bottom: 1px dotted palette(highlight);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: color.adjust(#ff9f43, $lightness: 10%);
+    border-bottom-style: solid;
+  }
+  
+  .icon {
+    margin: 0 0.5rem;
+  }
+}
