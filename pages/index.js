@@ -168,7 +168,7 @@ class IndexPage extends Component {
 
                     <div id="bg">
                         <video ref={this.videoRef} autoPlay loop playsInline>
-                            <source src="/static/video/FRAHIERSTIVAL.mp4" type="video/mp4" />
+                            <source src="/static/video/FRAHIERSTIVAL_720p.mp4" type="video/mp4" />
                         </video>
                     </div>
                 </div>
