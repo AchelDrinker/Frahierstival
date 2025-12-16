@@ -51,11 +51,5 @@ npm start
 
 Le site est optimisé pour être déployé sur [Vercel](https://vercel.com).
 
-## 📝 Crédits
-
-- Template original : [Dimension](https://html5up.net/dimension) par HTML5 UP.
-- Adapté pour Next.js par [Codebushi](https://codebushi.com/).
-- Développement et personnalisation : Hugo Martineu.
-
 ---
 *Frahier'stival - 14 & 15 Août 2026*
