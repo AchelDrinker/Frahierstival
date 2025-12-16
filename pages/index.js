@@ -130,23 +130,50 @@ class IndexPage extends Component {
             }}>
                 <div>
                     <Head>
-                        <title>Frahier'stival - 14 & 15 Août 2026</title>
-                        <meta name="description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026. Venez vibrer avec nous !" />
+                        <title>Frahier'stival - Festival de Musique 14 & 15 Août 2026</title>
+                        <meta name="description" content="Le Frahier’stival : 2 jours de concerts et convivialité à Frahier (70). Musique, animations et bonne humeur les 14 & 15 août 2026." />
                         <meta name="keywords" content="festival, musique, frahier, concert, haute-saone, 2026, aout, evenement, culture, belfort, montbeliard" />
                         <meta name="author" content="Frahier'stival" />
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                        
+                        <link rel="canonical" href="https://www.frahierstival.fr" />
+                        <link rel="icon" href="/static/images/Frahierstival_guitare.jpg" />
+
+                        {/* Schema.org Structured Data */}
+                        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Event",
+                            "name": "Frahier'stival 2026",
+                            "startDate": "2026-08-14",
+                            "endDate": "2026-08-15",
+                            "eventStatus": "https://schema.org/EventScheduled",
+                            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                            "location": {
+                                "@type": "Place",
+                                "name": "Frahier-et-Chatebier",
+                                "address": {
+                                    "@type": "PostalAddress",
+                                    "streetAddress": "Rue du Moulin",
+                                    "addressLocality": "Frahier-et-Chatebier",
+                                    "postalCode": "70400",
+                                    "addressCountry": "FR"
+                                }
+                            },
+                            "image": [
+                                "https://www.frahierstival.fr/static/images/Frahierstival_feu_artifice.jpg"
+                            ],
+                            "description": "Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur."
+                        })}} />
+
                         {/* Open Graph / Facebook */}
                         <meta property="og:type" content="website" />
-                        <meta property="og:title" content="Frahier'stival - 14 & 15 Août 2026" />
-                        <meta property="og:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
+                        <meta property="og:title" content="Frahier'stival - Festival de Musique 14 & 15 Août 2026" />
+                        <meta property="og:description" content="Le Frahier’stival : 2 jours de concerts et convivialité à Frahier (70). Musique, animations et bonne humeur les 14 & 15 août 2026." />
                         <meta property="og:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
 
                         {/* Twitter */}
                         <meta property="twitter:card" content="summary_large_image" />
-                        <meta property="twitter:title" content="Frahier'stival - 14 & 15 Août 2026" />
-                        <meta property="twitter:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
-                        <meta property="twitter:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
+                        <meta property="twitter:title" content="Frahier'stival - Festival de Musique 14 & 15 Août 2026" />
+                        <meta property="twitter:description" content="Le Frahier’stival : 2 jours de concerts et convivialité à Frahier (70). Musique, animations et bonne humeur les 14 & 15 août 2026." />
                     </Head>
 
                     <div id="wrapper">
