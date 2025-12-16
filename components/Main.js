@@ -28,6 +28,9 @@ class Main extends Component {
           <h2 className="major">{t.intro.title}</h2>
           <span className="image main"><img src="/static/images/Frahierstival_feu_artifice.jpg" alt="" /></span>
           <h3 className="major" style={{textAlign: 'center', color: '#ff9f43'}}>{t.intro.date}</h3>
+          <p style={{textAlign: 'center', marginBottom: '2rem', fontStyle: 'italic'}}>
+            <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight: '0.5rem'}}/> {t.contact.address}
+          </p>
           <p>{t.intro.p1}</p>  
           <p>{t.intro.p2}</p>
           {close}
@@ -50,6 +53,20 @@ class Main extends Component {
           <p dangerouslySetInnerHTML={{__html: t.tickets.p3}}></p>
           <ul className="actions" style={{marginBottom: '2rem'}}>
             <li><a href="https://www.helloasso.com/associations/frahierstival/evenements/frahier-stival-2026" target="_blank" rel="noopener noreferrer" className="button special icon fa-ticket">{t.tickets.button}</a></li>
+          </ul>
+          {close}
+        </article>
+
+        <article id="access" className={`${this.props.article === 'access' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+          <h2 className="major">{t.access.title}</h2>
+          <span className="image main"><img src="/static/images/Frahierstival_guitare.jpg" alt="" /></span>
+          <p>{t.access.p1}</p>
+          <p>{t.access.p2}</p>
+          <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '1rem', margin: '2rem 0'}}>
+            <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight: '0.5rem'}}/> {t.access.address}
+          </p>
+          <ul className="actions" style={{textAlign: 'center', marginBottom: '2rem'}}>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Moulin,+70400+Frahier-et-Chatebier" target="_blank" rel="noopener noreferrer" className="button special icon fa-map-marker">{t.access.directions}</a></li>
           </ul>
           {close}
         </article>
@@ -135,24 +152,16 @@ class Main extends Component {
             </div>
           </div>
 
-          <div style={{textAlign: 'center', marginBottom: '2rem'}}>
-            <p style={{marginBottom: '1rem'}}>
-              <strong>Frahier'stival</strong><br/>
-              {t.contact.address}
-            </p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Moulin,+70400+Frahier-et-Chatebier" target="_blank" rel="noopener noreferrer" className="button">
-              <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight: '0.5rem'}}/> {t.contact.directions}
-            </a>
+          <div style={{textAlign: 'center', marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem'}}>
+            <ul className="icons">
+              <li><a href="https://www.facebook.com/p/Frahierstival-61573934457910/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a></li>
+              <li><a href="https://www.instagram.com/frahierstival/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a></li>
+            </ul>
           </div>
-
-          <ul className="icons">
-            <li><a href="https://www.facebook.com/p/Frahierstival-61573934457910/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a></li>
-            <li><a href="https://www.instagram.com/frahierstival/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a></li>
-          </ul>
           {close}
         </article>
 

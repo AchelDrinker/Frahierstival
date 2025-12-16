@@ -24,6 +24,7 @@ const Header = (props) => {
                 <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('lineup')}}>{t.menu.lineup}</a></li>
                 <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('billeterie')}}>{t.menu.tickets}</a></li>
                 <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('equipe')}}>{t.menu.team}</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('access')}}>{t.menu.access}</a></li>
                 <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('contact')}}>{t.menu.contact}</a></li>
             </ul>
         </nav>
