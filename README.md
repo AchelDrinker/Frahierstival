@@ -1,31 +1,61 @@
-# nextjs-starter-dimension
-A Next.js starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/nextjs-website-starters/ for more Next.js starters and templates.
+# Frahier'stival
 
-## Preview
+Site web officiel du festival de musique **Frahier'stival**, qui se déroule à Frahier-et-Chatebier (70).
 
-http://nextjs-dimension.surge.sh/
+🌐 **Site en ligne :** [frahierstival.fr](https://frahierstival.fr)
 
-## Getting Started
+## 🚀 Technologies
 
-To get started, simply clone the repository and run `npm install`
+Ce projet est construit avec :
+- [Next.js](https://nextjs.org/) - Framework React
+- [React](https://reactjs.org/) - Bibliothèque UI
+- [Sass](https://sass-lang.com/) - Préprocesseur CSS
+- [FontAwesome](https://fontawesome.com/) - Icônes
+- [@vercel/analytics](https://vercel.com/analytics) - Statistiques de visite
 
+## ✨ Fonctionnalités
+
+- **Design Responsive** : Adapté aux mobiles, tablettes et bureaux.
+- **Internationalisation (i18n)** : Détection automatique de la langue (Français/Anglais) basée sur le navigateur.
+- **Single Page Application** : Navigation fluide sans rechargement de page.
+- **Vidéo d'arrière-plan** : Ambiance immersive.
+- **SEO Optimisé** : Balises méta, Open Graph, JSON-LD Schema.org, Sitemap.
+
+## 🛠️ Installation et Démarrage
+
+1.  **Cloner le dépôt**
+    ```bash
+    git clone https://github.com/AchelDrinker/Frahierstival.git
+    cd Frahierstival
+    ```
+
+2.  **Installer les dépendances**
+    ```bash
+    npm install
+    ```
+
+3.  **Lancer le serveur de développement**
+    ```bash
+    npm run dev
+    ```
+    Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+
+## 📦 Build et Déploiement
+
+Pour créer une version de production :
+
+```bash
+npm run build
+npm start
 ```
-# Clone the repo
-git clone https://github.com/codebushi/nextjs-starter-dimension.git
 
-# Move into the new directory
-cd nextjs-starter-dimension/
+Le site est optimisé pour être déployé sur [Vercel](https://vercel.com).
 
-# Install npm packages
-npm install
+## 📝 Crédits
 
-# Start up the next.js dev server, browse to http://localhost:3000/
-npm run dev
-```
+- Template original : [Dimension](https://html5up.net/dimension) par HTML5 UP.
+- Adapté pour Next.js par [Codebushi](https://codebushi.com/).
+- Développement et personnalisation : Hugo Martineu.
 
-## Generating the Static Site
-
-```
-# Build and export the site, the static files are generated in the out/ folder
-npm run export
-```
+---
+*Frahier'stival - 14 & 15 Août 2026*
