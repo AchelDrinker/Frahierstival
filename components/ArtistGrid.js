@@ -16,14 +16,8 @@ const ArtistGrid = ({ artists }) => {
 
   const days = Object.keys(groupedArtists);
 
-  // State to track expanded days. Default to the first day open.
-  const [expandedDays, setExpandedDays] = useState(() => {
-    const initial = {};
-    if (days.length > 0) {
-      initial[days[0]] = true;
-    }
-    return initial;
-  });
+  // State to track expanded days. Default to no days open.
+  const [expandedDays, setExpandedDays] = useState({});
 
   const toggleDay = (day) => {
     setExpandedDays(prev => ({
