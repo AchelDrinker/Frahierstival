@@ -133,8 +133,8 @@ class Main extends Component {
           <h2 className="major">Intro</h2>
           <span className="image main"><img src="/static/images/Frahierstival_feu_artifice.jpg" alt="" /></span>
           <h3 className="major" style={{textAlign: 'center', color: '#ff9f43'}}>Vendredi 14 & Samedi 15 Août 2026</h3>
-          <p>Le Frahier’stival est un événement musical et convivial qui prend vie au cœur de Frahier, village où nature et partage se rencontrent. Né de la volonté de rassembler habitants, familles et passionnés de musique, il offre une ambiance champêtre et chaleureuse, où la culture s’invite en plein air.</p>  
-          <p>Concerts, animations et moments de rencontre rythment la journée, permettant à chacun de découvrir de nouveaux artistes, de vibrer ensemble et de profiter d’un cadre verdoyant. Plus qu’un simple rendez-vous musical, le Frahier’stival est une fête locale portée par des bénévoles et partenaires engagés, qui célèbrent la richesse du territoire et l’esprit de convivialité.</p>
+          <p>Le Frahier’stival est un événement musical et convivial au cœur de Frahier. Né pour rassembler habitants et passionnés, il offre une ambiance champêtre où la culture s’invite en plein air.</p>  
+          <p>Concerts et animations rythment la journée pour vibrer ensemble dans un cadre verdoyant. Porté par des bénévoles engagés, le festival célèbre la richesse du territoire et l’esprit de convivialité.</p>
           {close}
         </article>
 
@@ -150,10 +150,9 @@ class Main extends Component {
         <article id="billeterie" className={`${this.props.article === 'billeterie' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Billetterie</h2>
           <span className="image main"><img src="/static/images/Frahierstival_scene.jpg" alt="" /></span>
-          <p>Préparez-vous pour le Frahier'stival 2026 ! Rejoignez-nous les <strong>Vendredi 14 et Samedi 15 Août</strong> pour deux jours inoubliables de musique et de partage au cœur de notre village.</p>
-          <p><strong>En réservant vos places, vous soutenez une association à but non lucratif. Si vous le pouvez, pensez à ajouter un don lors de votre commande</strong></p>
-          <p> Votre générosité est essentielle pour nous aider à pérenniser le festival et continuer à vous offrir de beaux moments !</p>
-          <p><strong>Nouveau :</strong> Nos t-shirts officiels sont désormais disponibles ! Vous pouvez les commander directement via notre billetterie en ligne.</p>
+          <p>Rejoignez-nous les <strong>Vendredi 14 et Samedi 15 Août 2026</strong> pour deux jours de musique et de partage !</p>
+          <p><strong>En réservant, vous soutenez une association à but non lucratif. Pensez à ajouter un don pour nous aider à pérenniser le festival.</strong></p>
+          <p><strong>Nouveau :</strong> Nos t-shirts officiels sont disponibles sur la billetterie en ligne !</p>
           <ul className="actions" style={{marginBottom: '2rem'}}>
             <li><a href="https://www.helloasso.com/associations/frahierstival/evenements/frahier-stival-2026" target="_blank" rel="noopener noreferrer" className="button special icon fa-ticket">Réserver mes places / Faire un don</a></li>
           </ul>
@@ -162,10 +161,10 @@ class Main extends Component {
 
         <article id="equipe" className={`${this.props.article === 'equipe' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Equipe</h2>
-          <span className="image main"><img src="/static/images/equipe.jpg" alt="" /></span>
-          <p>Derrière chaque sourire, chaque installation et chaque note de musique, il y a une équipe formidable : nos 40 bénévoles.</p>
-          <p>Sans eux, le Frahier’stival n’existerait pas. Ils donnent de leur temps, de leur énergie et de leur bonne humeur pour que le festival se déroule dans les meilleures conditions. De la mise en place des scènes à l’accueil du public, de la restauration à la communication, chacun apporte sa pierre à l’édifice avec passion et engagement.</p>
-          <p>Leur enthousiasme est contagieux, leur motivation exemplaire : ce sont eux qui font du Frahier’stival un événement authentique, convivial et chaleureux.</p>
+          <span className="image main"><img src="/static/images/Equipe.jpg" alt="" /></span>
+          <p>Derrière le festival, il y a une équipe formidable : nos 40 bénévoles.</p>
+          <p>Sans eux, le Frahier’stival n’existerait pas. De l'installation à l'accueil, ils donnent temps et énergie pour que tout soit parfait.</p>
+          <p>Leur enthousiasme et leur engagement font du Frahier’stival un événement authentique et chaleureux.</p>
           {close}
         </article>
 

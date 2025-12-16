@@ -118,7 +118,23 @@ class IndexPage extends Component {
             }}>
                 <div>
                     <Head>
-                        <title>Frahier'stival</title>
+                        <title>Frahier'stival - 14 & 15 Août 2026</title>
+                        <meta name="description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026. Venez vibrer avec nous !" />
+                        <meta name="keywords" content="festival, musique, frahier, concert, haute-saone, 2026, aout, evenement, culture, belfort, montbeliard" />
+                        <meta name="author" content="Frahier'stival" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
+                        
+                        {/* Open Graph / Facebook */}
+                        <meta property="og:type" content="website" />
+                        <meta property="og:title" content="Frahier'stival - 14 & 15 Août 2026" />
+                        <meta property="og:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
+                        <meta property="og:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
+
+                        {/* Twitter */}
+                        <meta property="twitter:card" content="summary_large_image" />
+                        <meta property="twitter:title" content="Frahier'stival - 14 & 15 Août 2026" />
+                        <meta property="twitter:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
+                        <meta property="twitter:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
                     </Head>
 
                     <div id="wrapper">
