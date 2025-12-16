@@ -123,7 +123,7 @@ class Main extends Component {
                 <h3 style={{color: '#ff9f43'}}>{t.contact.artist.title}</h3>
                 <p>{t.contact.artist.intro}</p>
                 
-                <form method="post" action="https://formspree.io/f/mldqypoo">
+                <form method="post" action="https://formspree.io/f/xpwvgbng">
                   <div className="field half first">
                     <label htmlFor="artist-name">{t.contact.artist.name}</label>
                     <input type="text" name="artist-name" id="artist-name" required />
