@@ -16,16 +16,24 @@ class IndexPage extends Component {
             articleTimeout: false,
             article: "",
             loading: "is-loading",
-            isMuted: false
+            isMuted: false,
+            lang: 'fr'
         }
         this.handleOpenArticle = this.handleOpenArticle.bind(this)
         this.handleCloseArticle = this.handleCloseArticle.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
         this.toggleMute = this.toggleMute.bind(this)
+        this.setLang = this.setLang.bind(this)
         this.videoRef = React.createRef()
     }
 
     componentDidMount() {
+        // Language detection
+        const userLang = navigator.language || navigator.userLanguage; 
+        if (!userLang.startsWith('fr')) {
+            this.setState({ lang: 'en' });
+        }
+
         this.timeoutId = setTimeout(() => {
             this.setState({ loading: "" })
         }, 100)
@@ -64,6 +72,10 @@ class IndexPage extends Component {
             video.muted = !video.muted;
             this.setState({ isMuted: video.muted });
         }
+    }
+
+    setLang(lang) {
+        this.setState({ lang })
     }
 
     handleOpenArticle(article) {
@@ -138,15 +150,16 @@ class IndexPage extends Component {
                     </Head>
 
                     <div id="wrapper">
-                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} lang={this.state.lang} />
                         <Main
                             isArticleVisible={this.state.isArticleVisible}
                             timeout={this.state.timeout}
                             articleTimeout={this.state.articleTimeout}
                             article={this.state.article}
                             onCloseArticle={this.handleCloseArticle}
+                            lang={this.state.lang}
                         />
-                        <Footer timeout={this.state.timeout} />
+                        <Footer timeout={this.state.timeout} lang={this.state.lang} />
                     </div>
 
                     <div className="sound-control" onClick={(e) => { e.stopPropagation(); this.toggleMute(); }}>
