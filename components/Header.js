@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGem } from '@fortawesome/free-regular-svg-icons'
+import { translations } from '../lib/translations'
 
-const Header = (props) => (
+const Header = (props) => {
+    const t = translations[props.lang].header;
+    return (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         {/* <div className="logo">
             <img src="/static/images/Frahierstival_logo.png" alt="Frahierstival Logo" style={{ height: '80%', marginTop: '0.7rem' }} />
@@ -11,25 +14,27 @@ const Header = (props) => (
         <div className="content">
             <div className="inner">
                 <h1>FRAHIER'STIVAL</h1>
-                <p>L'énergie d'un festival, l'âme d'un village.</p>
-                <p>Vendredi 14 & Samedi 15 Août 2026</p>
+                <p>{t.subtitle}</p>
+                <p>{t.date}</p>
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('intro')}}>Intro</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('lineup')}}>Line Up</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('billeterie')}}>Billetterie</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('equipe')}}>Equipe</a></li>
-                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('contact')}}>Contact</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('intro')}}>{t.menu.intro}</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('lineup')}}>{t.menu.lineup}</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('billeterie')}}>{t.menu.tickets}</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('equipe')}}>{t.menu.team}</a></li>
+                <li><a href="#" onClick={(e) => {e.preventDefault(); e.stopPropagation(); props.onOpenArticle('contact')}}>{t.menu.contact}</a></li>
             </ul>
         </nav>
     </header>
-)
+    )
+}
 
 Header.propTypes = {
     onOpenArticle: PropTypes.func,
-    timeout: PropTypes.bool
+    timeout: PropTypes.bool,
+    lang: PropTypes.string
 }
 
 export default Header

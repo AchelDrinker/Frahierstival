@@ -16,16 +16,24 @@ class IndexPage extends Component {
             articleTimeout: false,
             article: "",
             loading: "is-loading",
-            isMuted: false
+            isMuted: false,
+            lang: 'fr'
         }
         this.handleOpenArticle = this.handleOpenArticle.bind(this)
         this.handleCloseArticle = this.handleCloseArticle.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
         this.toggleMute = this.toggleMute.bind(this)
+        this.setLang = this.setLang.bind(this)
         this.videoRef = React.createRef()
     }
 
     componentDidMount() {
+        // Language detection
+        const userLang = navigator.language || navigator.userLanguage; 
+        if (!userLang.startsWith('fr')) {
+            this.setState({ lang: 'en' });
+        }
+
         this.timeoutId = setTimeout(() => {
             this.setState({ loading: "" })
         }, 100)
@@ -64,6 +72,10 @@ class IndexPage extends Component {
             video.muted = !video.muted;
             this.setState({ isMuted: video.muted });
         }
+    }
+
+    setLang(lang) {
+        this.setState({ lang })
     }
 
     handleOpenArticle(article) {
@@ -118,19 +130,36 @@ class IndexPage extends Component {
             }}>
                 <div>
                     <Head>
-                        <title>Frahier'stival</title>
+                        <title>Frahier'stival - 14 & 15 Août 2026</title>
+                        <meta name="description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026. Venez vibrer avec nous !" />
+                        <meta name="keywords" content="festival, musique, frahier, concert, haute-saone, 2026, aout, evenement, culture, belfort, montbeliard" />
+                        <meta name="author" content="Frahier'stival" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1" />
+                        
+                        {/* Open Graph / Facebook */}
+                        <meta property="og:type" content="website" />
+                        <meta property="og:title" content="Frahier'stival - 14 & 15 Août 2026" />
+                        <meta property="og:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
+                        <meta property="og:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
+
+                        {/* Twitter */}
+                        <meta property="twitter:card" content="summary_large_image" />
+                        <meta property="twitter:title" content="Frahier'stival - 14 & 15 Août 2026" />
+                        <meta property="twitter:description" content="Le Frahier’stival est un festival de musique convivial à Frahier (70). Concerts, animations et bonne humeur les 14 et 15 août 2026." />
+                        <meta property="twitter:image" content="/static/images/Frahierstival_feu_artifice.jpg" />
                     </Head>
 
                     <div id="wrapper">
-                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+                        <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} lang={this.state.lang} />
                         <Main
                             isArticleVisible={this.state.isArticleVisible}
                             timeout={this.state.timeout}
                             articleTimeout={this.state.articleTimeout}
                             article={this.state.article}
                             onCloseArticle={this.handleCloseArticle}
+                            lang={this.state.lang}
                         />
-                        <Footer timeout={this.state.timeout} />
+                        <Footer timeout={this.state.timeout} lang={this.state.lang} />
                     </div>
 
                     <div className="sound-control" onClick={(e) => { e.stopPropagation(); this.toggleMute(); }}>
