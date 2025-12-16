@@ -26,11 +26,8 @@ class Main extends Component {
 
         <article id="intro" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{t.intro.title}</h2>
-          <span className="image main"><img src="/static/images/Frahierstival_feu_artifice.jpg" alt="" /></span>
+          <span className="image main"><img src="/static/images/Frahierstival_feu_artifice.jpg" alt="Feu d'artifice du Frahier'stival" /></span>
           <h3 className="major" style={{textAlign: 'center', color: '#ff9f43'}}>{t.intro.date}</h3>
-          <p style={{textAlign: 'center', marginBottom: '2rem', fontStyle: 'italic'}}>
-            <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight: '0.5rem'}}/> {t.contact.address}
-          </p>
           <p>{t.intro.p1}</p>  
           <p>{t.intro.p2}</p>
           {close}
@@ -47,7 +44,7 @@ class Main extends Component {
 
         <article id="billeterie" className={`${this.props.article === 'billeterie' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{t.tickets.title}</h2>
-          <span className="image main"><img src="/static/images/Frahierstival_scene.jpg" alt="" /></span>
+          <span className="image main"><img src="/static/images/Frahierstival_scene.jpg" alt="Scène du Frahier'stival" /></span>
           <p dangerouslySetInnerHTML={{__html: t.tickets.p1}}></p>
           <p dangerouslySetInnerHTML={{__html: t.tickets.p2}}></p>
           <p dangerouslySetInnerHTML={{__html: t.tickets.p3}}></p>
@@ -59,7 +56,7 @@ class Main extends Component {
 
         <article id="access" className={`${this.props.article === 'access' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{t.access.title}</h2>
-          <span className="image main"><img src="/static/images/Frahierstival_guitare.jpg" alt="" /></span>
+          <span className="image main"><img src="/static/images/Frahierstival_guitare.jpg" alt="Guitare Frahier'stival" /></span>
           <p>{t.access.p1}</p>
           <p>{t.access.p2}</p>
           <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '1rem', margin: '2rem 0'}}>
@@ -73,7 +70,7 @@ class Main extends Component {
 
         <article id="equipe" className={`${this.props.article === 'equipe' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">{t.team.title}</h2>
-          <span className="image main"><img src="/static/images/Equipe.jpg" alt="" /></span>
+          <span className="image main"><img src="/static/images/Equipe.jpg" alt="L'équipe des bénévoles du Frahier'stival" /></span>
           <p>{t.team.p1}</p>
           <p>{t.team.p2}</p>
           <p>{t.team.p3}</p>
