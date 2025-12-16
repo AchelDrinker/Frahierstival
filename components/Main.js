@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight, faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import ArtistGrid from './ArtistGrid';
 import { translations, artistsData } from '../lib/translations';
 
@@ -134,6 +134,17 @@ class Main extends Component {
 
             </div>
           </div>
+
+          <div style={{textAlign: 'center', marginBottom: '2rem'}}>
+            <p style={{marginBottom: '1rem'}}>
+              <strong>Frahier'stival</strong><br/>
+              {t.contact.address}
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Moulin,+70400+Frahier-et-Chatebier" target="_blank" rel="noopener noreferrer" className="button">
+              <FontAwesomeIcon icon={faMapMarkerAlt} style={{marginRight: '0.5rem'}}/> {t.contact.directions}
+            </a>
+          </div>
+
           <ul className="icons">
             <li><a href="https://www.facebook.com/p/Frahierstival-61573934457910/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} />
