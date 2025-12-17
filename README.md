@@ -51,5 +51,3 @@ npm start
 
 Le site est optimisé pour être déployé sur [Vercel](https://vercel.com).
 
----
-*Frahier'stival - 14 & 15 Août 2026*
