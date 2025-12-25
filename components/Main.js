@@ -86,7 +86,7 @@ class Main extends Component {
               {/* Slide 1: General Contact */}
               <div className={`contact-slide ${this.state.contactType === 'general' ? 'active' : ''}`}>
                 <h3>{t.contact.general.title}</h3>
-                <form method="post" action="https://formspree.io/f/myzrobka">
+                <form method="post" action="https://formspree.io/f/mnjakewo">
                   <div className="field half first">
                     <label htmlFor="name">{t.contact.general.name}</label>
                     <input type="text" name="name" id="name" required />
