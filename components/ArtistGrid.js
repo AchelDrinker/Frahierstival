@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 const ArtistGrid = ({ artists }) => {
   // Group artists by day
@@ -36,7 +37,7 @@ const ArtistGrid = ({ artists }) => {
           >
             <span>{day}</span>
             <span className="toggle-icon">
-              <FontAwesomeIcon icon={faChevronRight} />
+              <FontAwesomeIcon icon={expandedDays[day] ? faChevronDown : faChevronRight} />
             </span>
           </h3>
           {expandedDays[day] && (
@@ -44,7 +45,15 @@ const ArtistGrid = ({ artists }) => {
               {groupedArtists[day].map((artist, index) => (
                 <div key={index} className="artist-card">
                   <div className="artist-image">
-                    <img src={artist.image} alt={artist.name} />
+                    <div style={{ position: 'relative', width: '100%', height: '200px' }}>
+                      <Image 
+                        src={artist.image} 
+                        alt={artist.name} 
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
                   </div>
                   <div className="artist-content">
                     <h3>{artist.name}</h3>
@@ -68,13 +77,13 @@ ArtistGrid.propTypes = {
   artists: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      genre: PropTypes.string.isRequired,
-      time: PropTypes.string.isRequired,
-      day: PropTypes.string,
-      description: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
+      genre: PropTypes.string,
+      time: PropTypes.string,
+      description: PropTypes.string,
+      day: PropTypes.string
     })
-  ).isRequired,
+  ).isRequired
 };
 
 export default ArtistGrid;
