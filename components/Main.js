@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faChevronRight, faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image';
-import ArtistGrid from './ArtistGrid';
+// import ArtistGrid from './ArtistGrid';
 import { translations, artistsData } from '../lib/translations';
 
 const Main = (props) => {
@@ -61,14 +61,14 @@ const Main = (props) => {
         {close}
       </article>
 
-      // <article id="lineup" className={`${props.article === 'lineup' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-      //   <h2 className="major">{t.lineup.title}</h2>
-      //   <div className="lineup-intro">
-      //     <p dangerouslySetInnerHTML={{__html: t.lineup.intro}}></p>
-      //   </div>
-      //   <ArtistGrid artists={artists} />
-      //   {close}
-      // </article>
+      <article id="lineup" className={`${props.article === 'lineup' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
+        <h2 className="major">{t.lineup.title}</h2>
+        <div className="lineup-intro">
+          <p dangerouslySetInnerHTML={{__html: t.lineup.intro}}></p>
+        </div>
+        <ArtistGrid artists={artists} />
+        {close}
+      </article>
 
       <article id="billeterie" className={`${props.article === 'billeterie' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
         <h2 className="major">{t.tickets.title}</h2>
