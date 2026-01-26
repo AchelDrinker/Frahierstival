@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faChevronRight, faChevronLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image';
-// import ArtistGrid from './ArtistGrid';
+import ArtistGrid from './ArtistGrid';
 import { translations, artistsData } from '../lib/translations';
 
 const Main = (props) => {
